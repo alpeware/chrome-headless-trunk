@@ -2,14 +2,14 @@ FROM ubuntu:14.04
 
 MAINTAINER Alpeware
 
-ENV REV=462983
+ENV REV=463171
 
 EXPOSE 9222
 
 RUN apt-get update -qqy \
   && apt-get -qqy install libnss3 libnss3-tools libfontconfig1 wget ca-certificates apt-transport-https inotify-tools unzip \
   libpangocairo-1.0-0 libx11-xcb-dev libxcomposite-dev libxcursor1 libxdamage1 libxi6 libgconf-2-4 libxtst6 libcups2-dev \
-  libxss-dev libxrandr-dev libasound2-dev libatk1.0-dev libgtk-3-dev \
+  libxss-dev libxrandr-dev libasound2-dev libatk1.0-dev libgtk-3-dev ttf-ancient-fonts \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN wget -q -O chrome.zip https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots \
