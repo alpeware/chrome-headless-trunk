@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Alpeware
 
-ENV REV=468996
+ENV REV=468999
 
 EXPOSE 9222
 
@@ -12,7 +12,7 @@ RUN apt-get update -qqy \
   libxss-dev libxrandr-dev libasound2-dev libatk1.0-dev libgtk-3-dev ttf-ancient-fonts chromium-codecs-ffmpeg-extra \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-RUN wget -q -O chrome.zip https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots \
+RUN wget -q -O chrome.zip https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/$REV/chrome-linux.zip \
   && unzip chrome.zip \
   && rm chrome.zip \
   && ln -s $PWD/chrome-linux/chrome /usr/bin/google-chrome-unstable
