@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER Alpeware
+MAINTAINER Alpeware <info@alpeware.com>
 
 ENV REV=469302
 
