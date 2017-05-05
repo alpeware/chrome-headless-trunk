@@ -12,4 +12,4 @@ Inspired by
 
 If this container is useful, please consider donating:
 
-[![Donate!](https://donate.alpeware.com/static/donate.png)](https://donate.alpeware.com/)
+[![Donate!](https://donate.alpeware.com/static/donate.png?foo)](https://donate.alpeware.com/)
