@@ -11,4 +11,5 @@ Inspired by
 - [National Library of Norway](https://github.com/nlnwa/docker-chrome-headless)
 
 If this container is useful, please consider donating:
+
 [![Donate](https://donate.alpeware.com/static/donate.png)](https://donate.alpeware.com/)
