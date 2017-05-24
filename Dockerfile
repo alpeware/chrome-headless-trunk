@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Alpeware <info@alpeware.com>
 
-ENV REV=474164
+ENV REV=474180
 
 EXPOSE 9222
 
