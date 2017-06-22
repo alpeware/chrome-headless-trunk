@@ -10,5 +10,5 @@ if [ -n "$CHROME_OPTS" ]; then
 fi
 
 # Start Chrome
-exec sh -c "/usr/bin/google-chrome-unstable $CHROME_ARGS"
+exec sh -c "exec /usr/bin/google-chrome-unstable $CHROME_ARGS"
 
