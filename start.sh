@@ -9,6 +9,15 @@ if [ -n "$CHROME_OPTS" ]; then
   CHROME_ARGS="${CHROME_ARGS} ${CHROME_OPTS}"
 fi
 
-# Start Chrome
-exec sh -c "/usr/bin/google-chrome-unstable $CHROME_ARGS"
+# Handle docker stop
+# see https://goo.gl/MuYxqu
+function shut_down() {
+	kill -SIGTERM $pid
+}
 
+trap "shut_down" SIGTERM
+
+# Start Chrome
+exec sh -c "/usr/bin/google-chrome-unstable $CHROME_ARGS" &
+pid=$!
+wait
