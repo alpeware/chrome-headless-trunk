@@ -12,6 +12,10 @@ RUN apt-get update -qqy \
   libxss-dev libxrandr-dev libasound2-dev libatk1.0-dev libgtk-3-dev ttf-ancient-fonts chromium-codecs-ffmpeg-extra \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
+RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb \
+	&& dpkg -i dumb-init_*.deb \
+	&& rm dumb-init_1.2.0_amd64.deb
+
 RUN wget -q -O chrome.zip https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/$REV/chrome-linux.zip \
   && unzip chrome.zip \
   && rm chrome.zip \
@@ -24,5 +28,7 @@ ADD start.sh import_cert.sh /usr/bin/
 RUN mkdir /data
 VOLUME /data
 ENV HOME=/data DEBUG_ADDRESS=0.0.0.0 DEBUG_PORT=9222
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 CMD ["/usr/bin/start.sh"]
