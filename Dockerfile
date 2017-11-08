@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 LABEL maintainer "Alpeware <info@alpeware.com>"
 
-ENV REV=514789
+ENV REV=514792
 
 EXPOSE 9222
 
